@@ -13,6 +13,7 @@ But one thing to note is that when we are using `RXJS in angular project` we don
 Before starting our `RXJS in angular` journey we will first keep it framework agnostic. We will first work in Vanilla JS.
 
 1. Create and Navigate to the Project Directory:
+
 ```bash
 npm create vite@latest
 Need to install the following packages:
