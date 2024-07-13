@@ -8,3 +8,6 @@ RxJS (Reactive Extensions for JavaScript) is a library for composing asynchronou
 You can checkout the installation process [here](https://rxjs.dev/guide/installation).
 
 But one thing to note is that when we are using `RXJS in angular project` we don't need to install it separately.
+
+## RXJS + Vanilla JS
+Before starting our `RXJS in angular` journey we will first keep it framework agnostic. We will first work in Vanilla JS.
