@@ -11,3 +11,33 @@ But one thing to note is that when we are using `RXJS in angular project` we don
 
 ## RXJS + Vanilla JS
 Before starting our `RXJS in angular` journey we will first keep it framework agnostic. We will first work in Vanilla JS.
+
+1. Create and Navigate to the Project Directory:
+```bash
+npm create vite@latest
+Need to install the following packages:
+  create-vite@5.3.0
+Ok to proceed? (y) y
+✔ Project name: …  1-RXJS-basics
+✔ Package name: … 1-rxjs-basics
+? Select a framework: › - Use arrow-keys. Return to submit.
+✔ Select a framework: › Vanilla
+✔ Select a variant: › TypeScript
+
+Done.
+```
+
+2. Install Necessary Dependencies:
+
+    About dependencies:
+    - webpack (to bundle the code)
+    - webpack-dev-server (to run dev server)
+    - typescript (Enables TypeScript support)
+    - ts-loader (Loads TypeScript files)
+    - webpack-cli (Provides Webpack command-line interface)
+
+```bash
+cd 1-RXJS-basics
+npm install rxjs webpack webpack-dev-server typescript ts-loader
+npm run dev
+```
