@@ -15,25 +15,16 @@ Before starting our `RXJS in angular` journey we will first keep it framework ag
 1. Create and Navigate to the Project Directory:
 
 ```bash
-npm create vite@latest
-Need to install the following packages:
-  create-vite@5.3.0
-Ok to proceed? (y) y
-✔ Project name: …  1-RXJS-basics
-✔ Package name: … 1-rxjs-basics
-? Select a framework: › - Use arrow-keys. Return to submit.
-✔ Select a framework: › Vanilla
-✔ Select a variant: › TypeScript
-
-Done.
+mkdir 1-RXJS-basics
+cd 1-RXJS-basics
+npm init -y
+touch index.js
 ```
 
 2. Install Necessary Dependencies:
 
 ```bash
-cd 1-RXJS-basics
 npm install rxjs 
-npm run dev
 ```
 
 ## RXJS is ready to rock!
