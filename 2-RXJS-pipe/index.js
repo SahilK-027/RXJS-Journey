@@ -1,6 +1,6 @@
 const { Observable } = require("rxjs");
 // Import operator
-const { map, filter, flatMap } = require("rxjs/operators");
+const { map } = require("rxjs/operators");
 
 // Sample API data
 const APIdata = {
