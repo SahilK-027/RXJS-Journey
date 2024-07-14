@@ -30,15 +30,8 @@ Done.
 
 2. Install Necessary Dependencies:
 
-    About dependencies:
-    - webpack (to bundle the code)
-    - webpack-dev-server (to run dev server)
-    - typescript (Enables TypeScript support)
-    - ts-loader (Loads TypeScript files)
-    - webpack-cli (Provides Webpack command-line interface)
-
 ```bash
 cd 1-RXJS-basics
-npm install rxjs webpack webpack-dev-server typescript ts-loader
+npm install rxjs 
 npm run dev
 ```
