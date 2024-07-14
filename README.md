@@ -9,7 +9,7 @@ You can checkout the installation process [here](https://rxjs.dev/guide/installa
 
 But one thing to note is that when we are using `RXJS in angular project` we don't need to install it separately.
 
-## RXJS + Vanilla JS
+## 1-RXJS-basics
 Before starting our `RXJS in angular` journey we will first keep it framework agnostic. We will first work in Vanilla JS.
 
 1. Create and Navigate to the Project Directory:
@@ -44,3 +44,56 @@ An observable in RXJS is like a radio station transmitter. It sets up the broadc
 
 ### Subscribers
 Now, think of a subscriber as a radio listener. When you turn on your radio and tune in to a specific station, you start receiving the broadcast. Similarly, in RXJS, when you subscribe to an observable, you start receiving the data emitted by that observable.
+
+
+### Let's code it:
+Here is a simple example to demonstrate the creation and subscription of an Observable in RxJS:
+
+```javascript
+const { Observable } = require("rxjs");
+
+// Create a new observable to emit data
+// Observables are lazy, meaning they don't start emitting values until you subscribe to them
+const observable = new Observable((subscriber) => {
+  // Emit the data
+  subscriber.next(10);
+
+  // Observable can emit multiple values
+  subscriber.next(20);
+  subscriber.next(30);
+
+  // Complete the observable
+  subscriber.complete();
+});
+
+const observer = {
+  next: (value) => {
+    console.log("Observer received value:", value);
+  },
+  error: (err) => {
+    console.log("ERROR:", err);
+  },
+  complete: () => {
+    console.log("COMPLETE status");
+  },
+};
+
+// Connect observable with observer
+observable.subscribe(observer);
+```
+
+### Output:
+When you run the above code, the output will be:
+
+```yaml
+Observer received value: 10
+Observer received value: 20
+Observer received value: 30
+COMPLETE status
+```
+
+Explanation:
+1. Create Observable: Using the Observable constructor, we create an observable that emits values.
+2. Subscriber: Inside the observable, we use subscriber.next() to emit values.
+3. Observer: We define an observer object with next, error, and complete methods to handle the emitted values, errors, and completion notifications respectively.
+4. Subscribe: We connect the observable with the observer by calling observable.subscribe(observer), which starts the data emission.
