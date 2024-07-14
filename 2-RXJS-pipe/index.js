@@ -14,9 +14,23 @@ const APIdata = {
     { name: "Grace", status: "inactive", age: 18 },
   ],
 };
+// Sample API data
+const APIdata2 = {
+  users: [
+    { name: "Alice", status: "active", age: 16 },
+    { name: "Bob", status: "inactive", age: 18 },
+  ],
+};
 
 let observable = new Observable((subscriber) => {
+  // APIdata2 is going to hit error
+  // The default behavior of RXJS is anytime observable hits an error
+  // It is going to completely shut down the connection
+  subscriber.next(APIdata2);
   subscriber.next(APIdata);
+
+  subscriber.complete();
+  subscriber.next(APIdata); // This won't get emitted as it is after complete() method
 }).pipe(
   // Map to convert object to users array
   map((receivedAPIData) => {
@@ -36,10 +50,9 @@ let observable = new Observable((subscriber) => {
   }),
   // Error handling
   map((avgAge) => {
-    if(avgAge < 18){
-      throw `All active users are too young`
-    }
-    else{
+    if (avgAge < 18) {
+      throw `All active users are too young`;
+    } else {
       return avgAge;
     }
   })
